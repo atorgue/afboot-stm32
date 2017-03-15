@@ -67,7 +67,7 @@ static void clock_setup(void)
 	val |= CONFIG_PLL_Q << 24;
 	*RCC_PLLCFGR = val;
 
-	val = 0;
+	val = *RCC_PLLSAICFGR;
 	val |= CONFIG_PLLSAI_N << 6;
 	val |= ((CONFIG_PLLSAI_P >> 1)- 1) << 16;
 	*RCC_PLLSAICFGR = val;
